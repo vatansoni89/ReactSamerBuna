@@ -11,6 +11,21 @@ function Hello(){
   return <div>Hello Hello React</div>
 }
 
+
+--------------------------
+Always use COMPONENT nameing starting from UPPERCASE otherwise it thinks it is a html given to render.
+component: Button
+html: button
+
 ReactDOM.render(
 <Hello/>, document.getElementById('mountNode')
 );
+
+function Button(){
+  return <button>TEST</button>
+}
+
+ReactDOM.render(
+<Button/>, document.getElementById('mountNode')
+);
+
