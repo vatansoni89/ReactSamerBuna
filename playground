@@ -1,0 +1,16 @@
+//Math.random();
+//React and ReactDOM
+//JSX
+//ES2015+
+
+
+
+//document.getElementById('mountNode').innerHTML = 'Hello!!'
+
+function Hello(){
+  return <div>Hello Hello React</div>
+}
+
+ReactDOM.render(
+<Hello/>, document.getElementById('mountNode')
+);
