@@ -38,7 +38,23 @@ function Button(){
 ReactDOM.render(
 <Button/>, document.getElementById('mountNode')
 );
--------------------------------------------------------------
+
+-------------------------handleClick------------------------------------
+function Button(){
+  const[counter, setCounter] = useState(5);
+  
+  //handleClick must be inside Button() to use counter variable.
+  const handleClick = () => setCounter(counter*2)
+  //returning a function call.
+  return (<button onClick={handleClick}>
+      {counter}
+    </button>)
+}
+
+ReactDOM.render(
+<Button/>, document.getElementById('mountNode')
+);
+--------------------------
 
 
 
