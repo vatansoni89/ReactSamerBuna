@@ -86,7 +86,7 @@ function Display(props){
   return (<div>{props.message}</div>);
 }
 
------------------------------------------------Component-Reusability------------jsdrops.com/rgs1.4---------------
+-----------------------------------------------Component-Reusability------------jsdrops.com/rgs1.6---------------
 
 ReactDOM.render(
   //each of these will betranstaled to function call.
