@@ -54,7 +54,39 @@ function Button(){
 ReactDOM.render(
 <Button/>, document.getElementById('mountNode')
 );
---------------------------
+--------------------------Parent-Child component communication---- jsdrops.com/rgs1.4------------
+
+ReactDOM.render(
+  //each of these will betranstaled to function call.
+  //make these react element the children of another react element.
+  //<><Button/><Display/></>, document.getElementById('mountNode') >>> <> </>: <React.Fragment> </React.Fragment>
+<App/>, document.getElementById('mountNode')
+);
+
+function App(){
+  const[counter, setCounter] = useState(5);
+  const incrementCounter = () => setCounter(counter*2);
+  return (<div>
+            <Button onClickFunction={incrementCounter}/>
+            <Display message={counter}/>
+          </div>);
+  
+}
+
+function Button(props){
+  //handleClick must be inside Button() to use counter variable.
+  //const handleClick = () => setCounter(counter*2)
+  //returning a function call.
+  return (<button onClick={props.onClickFunction}>
+      *2
+    </button>)
+}
+
+function Display(props){
+  return (<div>{props.message}</div>);
+}
+
+--------------------------------------------------------------------------------------------------------------
 
 
 
