@@ -293,6 +293,22 @@ p1.gree(); //Name is Person
 s1.gree(); //Name is Student and level is Beginner
 s2.gree(); //Special override
 
---------------------------------------
+-------------------Async/Await-------------------
+// const fetchData = () => {
+//   fetch('https://api.github.com').then(resp => {
+//     resp.json().then(data => {
+//       console.log(data);
+//     });
+//   });
+// };
 
+const fetchData = async () => {
+  const resp = await fetch('https://api.github.com');
+  const data = await resp.json();
+  console.log(data);
+};
+
+fetchData();
+
+-----------------------------------------------------
 
