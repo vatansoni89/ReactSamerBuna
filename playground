@@ -245,9 +245,21 @@ console.log('NewObject',newObject);
 //NewObject > Object { firstName: "John", lastName: "Doe" }
 
 
---------------------------------------------------------------
+-----------------------------Template-strings-----https://jscomplete.com/playground/template-strings-------
 
+const greeting = "Hello World";
 
+const answer = 'Forty Two';
+
+const html = `
+  <div>
+    ${Math.random()}
+  </div>
+`;
+
+html
+
+-------------------------------------------------------------------------------
 
 
 
