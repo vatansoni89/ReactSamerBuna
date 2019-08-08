@@ -184,10 +184,22 @@ const square2 = a => a*a;
 console.log(square1(2)); //4
 console.log(square2(2)); //4
 
+---------creating object, dynamic prop-------https://jscomplete.com/playground/object-literals---------
 
+const mystery = 'answer';
+const InverseOfPI = 1 / Math.PI;
 
+const obj = {
+	p1: 10,
+  p2: 20,
+  f1() {},
+  f2: () => {},
+  [mystery]: 42, //dynamic prop
+  InverseOfPI, // InverseOfPI: InverseOfPI
+};
 
-
+console.log(obj);
+-------------------------------------------------------------
 
 
 
