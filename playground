@@ -310,5 +310,37 @@ const fetchData = async () => {
 
 fetchData();
 
------------------------------------------------------
+---------------------React Class Component (Github Cards App)--------------------------------
+class Card extends React.Component{
+  render(){
+    return(
+      <div className="github-profile">
+        One GitHub Profile...
+        </div>
+    );
+  }
+}
+
+
+class App extends React.Component{
+  render(){
+             return (
+                      <div>
+                          <div className="header">{this.props.title}</div>
+                          <Card/>
+                       </div>
+                     )
+          }
+}
+// const App = ({title}) => (
+//   <div className="header">{title}</div>
+// );
+
+ReactDOM.render(
+	<App title="The GitHub Cards App" />,
+  mountNode,
+);
+
+
+---------------------------------------------------------------------------------------
 
