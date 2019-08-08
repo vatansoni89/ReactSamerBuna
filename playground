@@ -259,8 +259,40 @@ const html = `
 
 html
 
--------------------------------------------------------------------------------
+-----------------------------------Classes------https://jscomplete.com/playground/classes--------------------------------------
 
+class Person{
+  constructor(name){
+    this.name = name;
+  }
+  
+  gree(){
+    console.log(`Name is ${this.name}`)
+  }
+}
 
+class Student extends Person{
+  constructor(name,level){
+    super(name);
+    this.level = level;
+  }
+  
+  gree(){
+    console.log(`Name is ${this.name} and level is ${this.level}`)
+  }
+}
+
+const p1 = new Person("Person");
+const s1 = new Student('Student', 'Beginner');
+const s2 = new Student('Student', 'Beginner');
+
+//////////Override Inline////////////
+s2.gree = () => console.log(`Special override`)
+
+p1.gree(); //Name is Person
+s1.gree(); //Name is Student and level is Beginner
+s2.gree(); //Special override
+
+--------------------------------------
 
 
