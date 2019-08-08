@@ -346,5 +346,22 @@ ReactDOM.render(
 );
 
 
----------------------------------------------------------------------------------------
+----------------------------------------React-Style-https://jscomplete.com/playground/react-style----------------------------------------------
+https://jscomplete.com/playground/react-style
+
+class ConditionalStyle extends React.Component {
+	render() {
+  	return (
+    	<div style={{ color: Math.random() <= 0.5 ? 'green': 'red' }}>
+    	  How do you like this?
+    	</div>
+    );
+  }	
+}
+
+ReactDOM.render(
+	<ConditionalStyle />,
+  mountNode,
+);
+----------------------------
 
