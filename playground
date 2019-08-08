@@ -199,11 +199,53 @@ const obj = {
 };
 
 console.log(obj);
--------------------------------------------------------------
+------------------------Destructuring and Rest/Spread-------------------------------------
 
 
+---------------------Destrucruring----------------
+ const circle = {
+   label: 'circleX',
+   radius: 2,
+ };
+
+ const circleArea = ({radius}, {precision = 2} = {}) =>
+   (PI * radius * radius).toFixed(precision);
+
+ console.log(
+   circleArea(circle, { precision: 5 })
+ );
+
+-------------------Rest-Spread----https://jsdrops.com/rest-spread-----------
+
+const [first, ...restOfItems] = [10, 20, 30, 40];
+
+ console.log(first);
+//10 
+ console.log(restOfItems);
+// Array(3) [ 20, 30, 40 ]
+const data = {
+	temp1: '001',
+  temp2: '002',
+  firstName: 'John',
+  lastName: 'Doe',
+};
+
+const {temp1, temp2, ...person} = data;
+
+console.log('Person',person);
+//Person > Object { firstName: "John", lastName: "Doe" }
+
+const newArray = [...restOfItems];
+
+const newObject = {
+  ...person
+}
+
+console.log('NewObject',newObject);
+//NewObject > Object { firstName: "John", lastName: "Doe" }
 
 
+--------------------------------------------------------------
 
 
 
