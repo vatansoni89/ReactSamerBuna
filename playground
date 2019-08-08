@@ -154,7 +154,47 @@ const person = {
 };
 person.firstname = 'Matt'
 person.firstname
------------------------------------------------------------
+--------------arrow-vs-regular-functions-----------https://jscomplete.com/playground/arrow-vs-regular-functions-----
+///////////////////////syntax//////////
+const x = function(){  
+};
+
+const y = () =>{};
+
+////Difference///////////////////
+console.log(this);
+
+const testerObj = {
+  
+  fun1: function(){
+    console.log('fun1',this);
+  },
+  
+  fun2: () => {console.log('fun2',this);}
+  
+};
+
+testerObj.fun1(); // prints whole testerObj, the caller of function
+testerObj.fun2(); // The value of the "this" keyword inside an arrow function depends on WHERE the function was DEFINED (the SCOPE that defined the function). same as console.log(this);
+
+---------------shorthand------------
+//////////shorthand//////////
+const square1 = (a) => {return a*a};
+const square2 = a => a*a;
+console.log(square1(2)); //4
+console.log(square2(2)); //4
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
