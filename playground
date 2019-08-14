@@ -726,4 +726,85 @@ ReactDOM.render(
 	<App title="The GitHub Cards App" />,
   mountNode,
 );
+----------------------Ajax calls Updated-https://jsdrops.com/rgs2.7-----------------------------------------------------------
+
+const CardList = (props) => (
+	<div>
+    
+  	{props.profiles.map(profile => <Card key={profile.id} {...profile}/>)}
+	</div>
+);
+
+class Card extends React.Component {
+	render() {
+  	const profile = this.props;
+  	return (
+    	<div className="github-profile">
+    	  <img src={profile.avatar_url} />
+        <div className="info">
+          <div className="name">{profile.name}</div>
+          <div className="company">{profile.company}</div>
+        </div>
+    	</div>
+    );
+  }
+}
+
+class Form extends React.Component{
+  //userNameInput = React.createRef();
+  state = {userName: ''};
+  handleSubmit = async (event) => {
+    event.preventDefault(); // imp, without this form will be submitted.
+    //console.log(this.userNameInput.current.value); //as this.userNameInput is ref type so we used .current.value
+    
+    const respo = await axios.get(`https://api.github.com/users/${this.state.userName}`); // as axios.get() retuens Promise
+    //console.log(respo.data);
+    this.props.onSubmit(respo.data);
+    this.setState({userName: ''})
+  };
+
+  render(){
+    return(
+    <form onSubmit={this.handleSubmit} >
+        <input type="text" placeholder="git user name" required value={this.state.userName} 
+          onChange = {event => this.setState({userName: event.target.value})}
+          />
+        <button>Add Card</button>
+      </form>
+    );
+  }
+}
+
+class App extends React.Component {
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //     profiles: testData,
+  //   };
+  // }
+  
+  state = {profiles: []}; // not a part of official js but will be.
+
+  addnewProfile = (profileData) => {
+    this.setState(prevState => ({
+      profiles: [...prevState.profiles, profileData]
+    }));
+    //console.log('App',profileData);
+  };
+
+	render() {
+  	return (
+    	<div>
+    	  <div className="header">{this.props.title}</div>
+        <Form onSubmit={this.addnewProfile}/>
+        <CardList profiles={this.state.profiles} />
+    	</div>
+    );
+  }	
+}
+
+ReactDOM.render(
+	<App title="The GitHub Cards App" />,
+  mountNode,
+);
 -------------------------------------------------------------------------------------------------------
